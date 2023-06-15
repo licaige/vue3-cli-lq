@@ -4,5 +4,5 @@
   </div>
 </template>
 <script lang="ts" setup>
-  import ZbPipelineStart from './zb-pipeline-start'
+  import ZbPipelineStart from './zb-pipeline-start.vue'
 </script>

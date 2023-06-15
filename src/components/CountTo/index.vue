@@ -31,9 +31,9 @@
         type: Number,
         required: false,
         default: 0,
-        validator(value) {
-          return value >= 0
-        },
+        // validator(value) {
+        //   return value >= 0
+        // },
       },
       decimal: {
         type: String,
@@ -195,7 +195,7 @@
         return this.prefix + x1 + x2 + this.suffix
       },
     },
-    destroyed() {
+    unmounted() {
       cancelAnimationFrame(this.rAF)
     },
   }

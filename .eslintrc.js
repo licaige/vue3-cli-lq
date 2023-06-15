@@ -24,5 +24,8 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'off',
     'no-async-promise-executor': 'off',
     'vue/multi-word-component-names': 'off',
+    '@typescript-eslint/no-inferrable-types': 'off',
+    'no-sparse-arrays': 'off',
+    '@typescript-eslint/no-this-alias': 'off',
   },
 }

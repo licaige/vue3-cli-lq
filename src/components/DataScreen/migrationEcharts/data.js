@@ -1,6 +1,6 @@
 export const cityIconData = [
   {
-    adcode: 650000,
+    // adcode: 650000,
     name: '新疆维吾尔自治区',
     value: [88.999903, 43.607078],
   },

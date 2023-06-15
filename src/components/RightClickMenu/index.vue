@@ -26,7 +26,7 @@
       },
       dataInfo: {
         type: Object,
-        default: () => {},
+        default: () => ({}),
       },
       top: {
         type: Number,
