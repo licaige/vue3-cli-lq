@@ -38,6 +38,8 @@ export const asyncRoutes = [
   ...systemRouter,
 ]
 
+console.log('异步组件', asyncRoutes)
+
 /**
  * path ==> 路由路径
  * name ==> 路由名称
@@ -109,5 +111,7 @@ const router = createRouter({
   history: createWebHashHistory(), // hash
   routes: constantRoutes,
 })
+
+console.log('基本路由信息', router)
 
 export default router
