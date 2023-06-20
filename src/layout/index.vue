@@ -13,8 +13,11 @@
   import Mobile from './components/Mobile/index.vue'
   import { useSettingStore } from '@/store/modules/setting'
   import { useResizeHandler } from '@/hooks/useResizeHandler'
+  // 纵向布局
   import LayoutVertical from './LayoutVertical/index.vue'
+  // 水平的布局
   import LayoutHorizontal from './LayoutHorizontal/index.vue'
+  //纵列布局
   import LayoutColumns from './LayoutColumns/index.vue'
 
   const SettingStore = useSettingStore()
