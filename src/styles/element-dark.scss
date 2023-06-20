@@ -1,18 +1,12 @@
 // 暗黑模式自定义样式
 html.dark {
   /* 自定义深色背景颜色 */
-
   //--el-bg-color: #141414;
   //--el-bg-color-overlay: #1d1e1f;
-
   --zb-border-light: 1px solid #4c4d4f;
-
-
   body{
     background: none;
   }
-
-
   // 编辑器
   .w-e-toolbar, .w-e-text-container, .w-e-menu-panel{
     background: none!important;
@@ -21,14 +15,12 @@ html.dark {
   .md{
     background: none!important;
   }
-
   #app{
     .sidebar-container{
       background: var(--el-bg-color)!important;
       & .el-menu .el-sub-menu > .el-sub-menu__title,
       & .el-sub-menu .el-menu-item {
         background-color: var(--el-bg-color) !important;
-
         &:hover {
           background-color: var(--el-bg-color) !important;
         }
@@ -43,9 +35,6 @@ html.dark {
       }
     }
   }
-
-
-
   .sidebar-logo-container{
     background: none;
     box-sizing: border-box;
@@ -59,8 +48,6 @@ html.dark {
   .theme-item{
     color: var(--el-text-color-primary) !important;
   }
-
-
   .el-table__header th {
     font-weight: bold;
     color: white;
@@ -69,8 +56,6 @@ html.dark {
     background: none;
     color: white;
   }
-
-
   .zb-pro-table{
     .header{
       background: none!important;
@@ -84,7 +69,6 @@ html.dark {
       color: white!important;
     }
   }
-
   // header
   .m-layout-header{
     color: var(--el-text-color-primary) !important;
@@ -106,10 +90,7 @@ html.dark {
         border-bottom: none!important;
       }
     }
-
-
   }
-
   // 内容区
   .app-main{
     .echarts-map{
@@ -118,7 +99,6 @@ html.dark {
     .app-echarts{
       background: none;
     }
-
     .app-container{
       .header{
         background: none;
@@ -133,25 +113,19 @@ html.dark {
         color: var(--el-text-color-primary) !important;
       }
     }
-
     .item-group-item{
       background: none!important;
       border: var(--zb-border-light);
       color: #cccccc;
     }
-
     .app-container-inner{
       background: none;
     }
   }
-
   // 底部
   .footer-layout{
     border-top:var(--zb-border-light);
   }
-
-
-
   // 登录
   .login-container {
     background-color: #191919 !important;
@@ -168,7 +142,6 @@ html.dark {
       background: white;
     }
   }
-
   .el-scrollbar{
     border:var(--zb-border-light);
     border-top:none ;
