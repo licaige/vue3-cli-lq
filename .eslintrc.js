@@ -27,5 +27,6 @@ module.exports = {
     '@typescript-eslint/no-inferrable-types': 'off',
     'no-sparse-arrays': 'off',
     '@typescript-eslint/no-this-alias': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
   },
 }

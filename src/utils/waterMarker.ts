@@ -1,4 +1,5 @@
-function watermark (options) {
+//水印方法
+function watermark(options) {
   const {
     container = document.body, // 容器
     width = '240', // canvas元素宽
@@ -11,7 +12,7 @@ function watermark (options) {
     globalAlpha = 0.3, // 设置图形和图像透明度的值
     rotate = 16, // 文字旋转角度
     zIndex = 1000, // 元素堆叠顺序
-    isCancel =true
+    isCancel = true,
   } = options
 
   const canvas = document.createElement('canvas')
@@ -29,7 +30,7 @@ function watermark (options) {
 
   const base64Url = canvas.toDataURL() // 返回一个包含图片展示的 data URI
 
-  const __wm = document.querySelector('.__wm')// 选择器
+  const __wm = document.querySelector('.__wm') // 选择器
   const watermarkDiv = __wm || document.createElement('div')
   const styleStr = `
     position:absolute;
@@ -47,7 +48,6 @@ function watermark (options) {
 
   container.style.position = 'relative'
   container.appendChild(watermarkDiv) // 添加元素
-
 
   // 监听删除 防止用户去手动删除，如果手动删除 ，在重新添加
   // const MutationObserver = window.MutationObserver || window.WebKitMutationObserver

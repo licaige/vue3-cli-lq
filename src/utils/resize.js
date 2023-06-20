@@ -1,3 +1,4 @@
+//屏幕缩放的方法
 import { debounce } from '@/utils/index.js'
 
 export default {

@@ -54,10 +54,13 @@ export function filterKeepAlive(routers) {
   return cacheRouter
 }
 
+/*
 export function handleRoutes(routers, pathUrl = '') {
   routers.forEach((item) => {
     item.path = path.resolve(pathUrl, item.path)
     if (item.children && item.children.length) {
+
     }
   })
 }
+*/

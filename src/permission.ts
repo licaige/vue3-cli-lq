@@ -21,7 +21,7 @@ router.beforeEach(async (to, from, next) => {
   }
   //拿到用户信息对应的Store
   const UserStore = useUserStore()
-  console.log('UserStore', UserStore)
+  // console.log('UserStore', UserStore)
   // 确定用户是否已登录过，存在Token
   const hasToken = UserStore.token
   //存在Token的情况下
@@ -34,12 +34,13 @@ router.beforeEach(async (to, from, next) => {
       try {
         //拿到动态路由对应的Store
         const PermissionStore = usePermissionStore()
-        console.log('拿到动态路由对应的Store', PermissionStore)
+        // console.log('拿到动态路由对应的Store', PermissionStore)
         console.log('拿到动态路由对应的Store', PermissionStore.routes)
         // 路由添加进去了没有及时更新 需要重新进去一次拦截
         if (!PermissionStore.routes.length) {
           // 获取权限列表进行接口访问 因为这里页面要切换权限
           const accessRoutes = await PermissionStore.generateRoutes(UserStore.roles)
+          console.log('获取权限列表进行接口访问 因为这里页面要切换权限', accessRoutes)
           hasRoles = false
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore

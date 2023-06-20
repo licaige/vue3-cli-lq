@@ -1,4 +1,3 @@
-
 /**
  * Parse the time to string
  * @param {(Object|string|number)} time
@@ -64,6 +63,7 @@ export function formatTime(time, option) {
   const d = new Date(time)
   const now = Date.now()
 
+  // @ts-ignore
   const diff = (now - d) / 1000
 
   if (diff < 30) {
@@ -111,7 +111,7 @@ export function getQueryObject(url) {
 export function byteLength(str) {
   // returns the byte length of an utf8 string
   let s = str.length
-  for (var i = str.length - 1; i >= 0; i--) {
+  for (let i = str.length - 1; i >= 0; i--) {
     const code = str.charCodeAt(i)
     if (code > 0x7f && code <= 0x7ff) s++
     else if (code > 0x7ff && code <= 0xffff) s += 2
@@ -311,7 +311,7 @@ export function uniqueArr(arr) {
  */
 export function createUniqueString() {
   const timestamp = +new Date() + ''
-  const randomNum = parseInt((1 + Math.random()) * 65536) + ''
+  const randomNum = parseInt(String((1 + Math.random()) * 65536)) + ''
   return (+(randomNum + timestamp)).toString(32)
 }
 
@@ -347,10 +347,10 @@ export function removeClass(ele, cls) {
 }
 
 export function getColor() {
-  var str = '#'
-  var arr = ['1', '2', '3', '4', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
-  for (var i = 0; i < 6; i++) {
-    var num = parseInt(Math.random() * 16)
+  let str = '#'
+  const arr = ['1', '2', '3', '4', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+  for (let i = 0; i < 6; i++) {
+    const num = parseInt(String(Math.random() * 16))
     str += arr[num]
   }
   return str
@@ -360,14 +360,14 @@ export const isArray = function (value) {
   return objToString.call(value) === '[object Array]'
 }
 
-let funProto = Function.prototype
-let objProto = Object.prototype
+const funProto = Function.prototype
+const objProto = Object.prototype
 
-let getPrototypeOf = Object.getPrototypeOf
+const getPrototypeOf = Object.getPrototypeOf
 
-let objToString = objProto.toString
-let hasOwnProperty = objProto.hasOwnProperty
-let funToString = funProto.toString
+const objToString = objProto.toString
+const hasOwnProperty = objProto.hasOwnProperty
+const funToString = funProto.toString
 // 检查给定的值是否是字符串
 export const isString = function (value) {
   return objToString.call(value) === '[object String]'
@@ -378,13 +378,13 @@ export const isPlainObject = function (value) {
     return false
   }
 
-  let prototype = getPrototypeOf(value)
+  const prototype = getPrototypeOf(value)
 
   if (prototype === null) {
     return true
   }
 
-  let constructor = hasOwnProperty.call(prototype, 'constructor') && prototype.constructor
+  const constructor = hasOwnProperty.call(prototype, 'constructor') && prototype.constructor
 
   return (
     typeof constructor === 'function' && funToString.call(constructor) === funToString.call(Object)
@@ -393,7 +393,7 @@ export const isPlainObject = function (value) {
 
 // // 深度克隆 array 数组或 json 对象，返回克隆后的副本
 export const deepObjClone = function (obj) {
-  let weakMap = new WeakMap()
+  const weakMap = new WeakMap()
   function clone(obj) {
     if (obj == null) {
       return obj
@@ -409,11 +409,11 @@ export const deepObjClone = function (obj) {
     if (weakMap.get(obj)) {
       return weakMap.get(obj)
     }
-    let copy = new obj.constructor()
+    const copy = new obj.constructor()
     weakMap.set(obj, copy)
-    for (let key in obj) {
+    for (const key in obj) {
       if (Object.prototype.hasOwnProperty.call(obj, key)) {
-        let value = obj[key]
+        const value = obj[key]
         copy[key] = clone(value)
       }
     }
@@ -422,13 +422,12 @@ export const deepObjClone = function (obj) {
   return clone(obj)
 }
 
-
 export function getTimeStateStr() {
-  let timeNow = new Date();
-  let hours = timeNow.getHours();
-  if (hours >= 6 && hours <= 10) return `早上好`;
-  if (hours >= 10 && hours <= 14) return `中午好`;
-  if (hours >= 14 && hours <= 18) return `下午好`;
-  if (hours >= 18 && hours <= 24) return `晚上好`;
-  if (hours >= 0 && hours <= 6) return `凌晨好`;
+  const timeNow = new Date()
+  const hours = timeNow.getHours()
+  if (hours >= 6 && hours <= 10) return `早上好`
+  if (hours >= 10 && hours <= 14) return `中午好`
+  if (hours >= 14 && hours <= 18) return `下午好`
+  if (hours >= 18 && hours <= 24) return `晚上好`
+  if (hours >= 0 && hours <= 6) return `凌晨好`
 }

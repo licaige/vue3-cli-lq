@@ -1,3 +1,4 @@
+//TokenKey处理函数
 const TokenKey = 'zb-token'
 
 export function getToken() {
